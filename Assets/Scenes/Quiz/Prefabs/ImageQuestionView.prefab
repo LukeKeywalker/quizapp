@@ -1794,10 +1794,6 @@ MonoBehaviour:
       ObjeckLink: -1125776680
       PropertyPath: m_Name
       Mode: 0
-    - Object: {fileID: 428370}
-      ObjeckLink: 434385000
-      PropertyPath: m_LocalPosition
-      Mode: 0
     - Object: {fileID: 11481740}
       ObjeckLink: 1794348163
       PropertyPath: m_Script
@@ -1811,12 +1807,12 @@ MonoBehaviour:
       PropertyPath: m_questionTextLabel
       Mode: 0
     NonPrefabObjects:
-    - child: {fileID: 461190}
-      parent: {fileID: 451446}
-    - child: {fileID: 471906}
-      parent: {fileID: 451446}
     - child: {fileID: 484100}
       parent: {fileID: 428370}
+    - child: {fileID: 471906}
+      parent: {fileID: 451446}
+    - child: {fileID: 461190}
+      parent: {fileID: 451446}
     - child: {fileID: 451446}
       parent: {fileID: 428370}
     NonPrefabComponents: []

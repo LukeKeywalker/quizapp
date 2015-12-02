@@ -935,10 +935,6 @@ MonoBehaviour:
       ObjeckLink: -1125776680
       PropertyPath: m_Name
       Mode: 0
-    - Object: {fileID: 435200}
-      ObjeckLink: 434385000
-      PropertyPath: m_LocalPosition
-      Mode: 0
     - Object: {fileID: 11451294}
       ObjeckLink: 634064605
       PropertyPath: mDepth
@@ -968,12 +964,12 @@ MonoBehaviour:
       PropertyPath: m_questionTextLabel
       Mode: 0
     NonPrefabObjects:
-    - child: {fileID: 434658}
-      parent: {fileID: 460816}
-    - child: {fileID: 458906}
-      parent: {fileID: 460816}
     - child: {fileID: 460816}
       parent: {fileID: 435200}
+    - child: {fileID: 458906}
+      parent: {fileID: 460816}
+    - child: {fileID: 434658}
+      parent: {fileID: 460816}
     NonPrefabComponents: []
     RemovedObjects: 
     TransformParentChanges: []
