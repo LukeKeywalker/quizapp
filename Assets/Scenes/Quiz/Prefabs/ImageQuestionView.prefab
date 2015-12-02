@@ -376,7 +376,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -392, z: 0}
+  m_LocalPosition: {x: 0, y: -394, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464776}
@@ -439,7 +439,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -275, z: 0}
+  m_LocalPosition: {x: 0, y: -274, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423282}
@@ -478,7 +478,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453230}
@@ -546,7 +546,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -47, z: 0}
+  m_LocalPosition: {x: 0, y: -46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418178}
@@ -800,6 +800,30 @@ MonoBehaviour:
       ObjeckLink: 323009937
       PropertyPath: onClick.Array.data[0].oneShot
       Mode: 0
+    - Object: {fileID: 11413388}
+      ObjeckLink: -2147109763
+      PropertyPath: leftAnchor.target
+      Mode: 0
+    - Object: {fileID: 11413388}
+      ObjeckLink: -2147109763
+      PropertyPath: rightAnchor.target
+      Mode: 0
+    - Object: {fileID: 11413388}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.target
+      Mode: 0
+    - Object: {fileID: 11413388}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.absolute
+      Mode: 0
+    - Object: {fileID: 11413388}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.target
+      Mode: 0
+    - Object: {fileID: 11413388}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.absolute
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -934,21 +958,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
     absolute: 30
   rightAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 1
     absolute: -30
   bottomAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 385
+    absolute: 304
   topAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 481
+    absolute: 400
   updateAnchors: 1
   mColor: {r: .634839952, g: .71198988, b: .838235259, a: 1}
   mPivot: 4
@@ -1054,6 +1078,30 @@ MonoBehaviour:
     - Object: {fileID: 11441594}
       ObjeckLink: 323009937
       PropertyPath: onClick.Array.data[0].oneShot
+      Mode: 0
+    - Object: {fileID: 11441562}
+      ObjeckLink: -2147109763
+      PropertyPath: leftAnchor.target
+      Mode: 0
+    - Object: {fileID: 11441562}
+      ObjeckLink: -2147109763
+      PropertyPath: rightAnchor.target
+      Mode: 0
+    - Object: {fileID: 11441562}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.target
+      Mode: 0
+    - Object: {fileID: 11441562}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.absolute
+      Mode: 0
+    - Object: {fileID: 11441562}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.target
+      Mode: 0
+    - Object: {fileID: 11441562}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.absolute
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -1357,21 +1405,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
     absolute: 30
   rightAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 1
     absolute: -30
   bottomAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 385
+    absolute: 417
   topAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 481
+    absolute: 513
   updateAnchors: 1
   mColor: {r: .634839952, g: .71198988, b: .838235259, a: 1}
   mPivot: 4
@@ -1474,6 +1522,30 @@ MonoBehaviour:
       ObjeckLink: 323009937
       PropertyPath: onClick.Array.data[0].oneShot
       Mode: 0
+    - Object: {fileID: 11436070}
+      ObjeckLink: -2147109763
+      PropertyPath: leftAnchor.target
+      Mode: 0
+    - Object: {fileID: 11436070}
+      ObjeckLink: -2147109763
+      PropertyPath: rightAnchor.target
+      Mode: 0
+    - Object: {fileID: 11436070}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.target
+      Mode: 0
+    - Object: {fileID: 11436070}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.absolute
+      Mode: 0
+    - Object: {fileID: 11436070}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.target
+      Mode: 0
+    - Object: {fileID: 11436070}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.absolute
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -1492,21 +1564,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
     absolute: 30
   rightAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 1
     absolute: -30
   bottomAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 385
+    absolute: 70
   topAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 481
+    absolute: 166
   updateAnchors: 1
   mColor: {r: .634839952, g: .71198988, b: .838235259, a: 1}
   mPivot: 4
@@ -1794,6 +1866,30 @@ MonoBehaviour:
       ObjeckLink: -1125776680
       PropertyPath: m_Name
       Mode: 0
+    - Object: {fileID: 428370}
+      ObjeckLink: 434385000
+      PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 11492498}
+      ObjeckLink: -456498449
+      PropertyPath: leftAnchor.target
+      Mode: 0
+    - Object: {fileID: 11492498}
+      ObjeckLink: -456498449
+      PropertyPath: rightAnchor.target
+      Mode: 0
+    - Object: {fileID: 11492498}
+      ObjeckLink: -456498449
+      PropertyPath: bottomAnchor.target
+      Mode: 0
+    - Object: {fileID: 11492498}
+      ObjeckLink: -456498449
+      PropertyPath: topAnchor.target
+      Mode: 0
+    - Object: {fileID: 11492498}
+      ObjeckLink: -456498449
+      PropertyPath: aspectRatio
+      Mode: 0
     - Object: {fileID: 11481740}
       ObjeckLink: 1794348163
       PropertyPath: m_Script
@@ -1807,13 +1903,13 @@ MonoBehaviour:
       PropertyPath: m_questionTextLabel
       Mode: 0
     NonPrefabObjects:
-    - child: {fileID: 484100}
-      parent: {fileID: 428370}
-    - child: {fileID: 471906}
-      parent: {fileID: 451446}
     - child: {fileID: 461190}
       parent: {fileID: 451446}
+    - child: {fileID: 471906}
+      parent: {fileID: 451446}
     - child: {fileID: 451446}
+      parent: {fileID: 428370}
+    - child: {fileID: 484100}
       parent: {fileID: 428370}
     NonPrefabComponents: []
     RemovedObjects: 
@@ -2113,6 +2209,30 @@ MonoBehaviour:
       ObjeckLink: 323009937
       PropertyPath: onClick.Array.data[0].oneShot
       Mode: 0
+    - Object: {fileID: 11466116}
+      ObjeckLink: -2147109763
+      PropertyPath: leftAnchor.target
+      Mode: 0
+    - Object: {fileID: 11466116}
+      ObjeckLink: -2147109763
+      PropertyPath: rightAnchor.target
+      Mode: 0
+    - Object: {fileID: 11466116}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.target
+      Mode: 0
+    - Object: {fileID: 11466116}
+      ObjeckLink: -2147109763
+      PropertyPath: bottomAnchor.absolute
+      Mode: 0
+    - Object: {fileID: 11466116}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.target
+      Mode: 0
+    - Object: {fileID: 11466116}
+      ObjeckLink: -2147109763
+      PropertyPath: topAnchor.absolute
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -2197,21 +2317,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
     absolute: 30
   rightAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 1
     absolute: -30
   bottomAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 385
+    absolute: 189
   topAnchor:
-    target: {fileID: 0}
+    target: {fileID: 428370}
     relative: 0
-    absolute: 481
+    absolute: 285
   updateAnchors: 1
   mColor: {r: .634839952, g: .71198988, b: .838235259, a: 1}
   mPivot: 4
@@ -2298,12 +2418,12 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 640
-  mHeight: 960
+  mHeight: 1023
   mDepth: -1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .666666687
+  aspectRatio: .625610948
   mType: 1
   mFillDirection: 4
   mFillAmount: 1

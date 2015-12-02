@@ -18,7 +18,7 @@ public class AnswerView : MonoBehaviour {
 		}
 	}
 
-	void Start()
+	void Awake()
 	{
 		m_button = GetComponent<UIButton>();
 		m_buttonSprite = GetComponent<UISprite>();
