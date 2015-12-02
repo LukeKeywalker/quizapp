@@ -6,7 +6,7 @@ using System;
 public class QuizController : MonoBehaviour {
 
 	private List<QuestionView> m_questionViews;
-	private List<Question> m_roundQuestion;
+	private List<Question> m_questions;
 	private int m_currentQuestionIndex;
 	private Dictionary<Type, Action<Question>> m_viewDispatcher;
 	private QuestionView m_currentView;
@@ -18,60 +18,73 @@ public class QuizController : MonoBehaviour {
 		AskNextQuestion();
 	}
 
-	// Ta procedura symuluje wczytywanie pytań z zewnętrzne klasy
+	// Ta procedura symuluje wczytywanie pytań z zewnętrznej klasy
 	void InitializeQuestions()
 	{
 		m_currentQuestionIndex = -1;
 		
-		m_roundQuestion = new List<Question>()
+		m_questions = new List<Question>()
 		{
 			new TextQuestion(
 				"Ile Pudzian bierze na klate kiedy ma dobry dzien?",
 				new Dictionary<string, string>()
 				{
-				{ "A", "Miliard" },
-				{ "B", "Milion" },
-				{ "C", "240" },
-				{ "D", "180" },
-			}, 
-			"A"
+					{ "A", "Miliard" },
+					{ "B", "Milion" },
+					{ "C", "240" },
+					{ "D", "180" },
+				}, 
+				"A"
 			),
 			
 			new TextQuestion(
 				"Jak sie nazywa znak w zapisie nutowym podwyzszajacy dzwiek o pol tonu?",
 				new Dictionary<string, string>()
 				{
-				{ "A", "Cis-mol" },
-				{ "B", "Krzyzyk" },
-				{ "C", "Bemol" },
-				{ "D", "Kropka" },
-			}, 
-			"B"
+					{ "A", "Cis-mol" },
+					{ "B", "Krzyzyk" },
+					{ "C", "Bemol" },
+					{ "D", "Kropka" },
+				}, 
+				"B"
 			),
 			
 			new TextQuestion(
 				"Na jaka chorobe zakazna zmarl Fryderyk Szopen?",
 				new Dictionary<string, string>()
 				{
-				{ "A", "Ja Yeti" },
-				{ "B", "Syfilis" },
-				{ "C", "Gruzlica" },
-				{ "D", "Ebola" },
-			}, 
-			"C"
+					{ "A", "Ja Yeti" },
+					{ "B", "Syfilis" },
+					{ "C", "Gruzlica" },
+					{ "D", "Ebola" },
+				}, 
+				"C"
 			),
 			
 			new ImageQuestion(
 				"Ktora czesc ciala obcial sobie autore tego obrazu",
 				new Dictionary<string, string>()
 				{
-				{ "A", "Ucho" },
-				{ "B", "Reke" },
-				{ "C", "Noge" },
-				{ "D", "c===3 XD" },
-			}, 
-			"A",
-			"vanGogh1"
+					{ "A", "Ucho" },
+					{ "B", "Reke" },
+					{ "C", "Noge" },
+					{ "D", "c==/=3 XD" },
+				}, 
+				"A",
+				"vanGogh1"
+			),
+
+			new ImageQuestion(
+				"W jakim stylu zostal namalowany ten fragment obrazu?",
+				new Dictionary<string, string>()
+				{
+					{ "A", "Impresjonizm" },
+					{ "B", "Realizm" },
+					{ "C", "Rokoko" },
+					{ "D", "Surrealizm" },
+				}, 
+				"A",
+				"impresjonizm"
 			)
 		};
 	}
@@ -87,6 +100,9 @@ public class QuizController : MonoBehaviour {
 	}
 
 	// Pobierz wszystkie widoki ze sceny i zapamiętaj je w liście
+	// Lepiej unikać wiązania widoków z kontrolerem w edytorze, gdyż
+	// podczas zespołowej pracy często dochodzi do odpinania referencji
+	// co generuje uciążliwe w wykrywaniu błędy
 	void AssingQuestionViews()
 	{
 		m_questionViews = new List<QuestionView>(FindObjectsOfType<QuestionView>());
@@ -98,9 +114,9 @@ public class QuizController : MonoBehaviour {
 	{
 		m_currentQuestionIndex++;
 		HideAllViews();
-		if (m_currentQuestionIndex < m_roundQuestion.Count)
+		if (m_currentQuestionIndex < m_questions.Count)
 		{
-			var currentQuestion = m_roundQuestion[m_currentQuestionIndex];
+			var currentQuestion = m_questions[m_currentQuestionIndex];
 			DispatchQuestion(currentQuestion);
 		}
 		else
@@ -199,7 +215,7 @@ public class QuizController : MonoBehaviour {
 
 	void HandleAnswerSelected(string answerKey)
 	{
-		var currentQuestion = m_roundQuestion[m_currentQuestionIndex];
+		var currentQuestion = m_questions[m_currentQuestionIndex];
 		currentQuestion.Answer(answerKey);
 	}
 

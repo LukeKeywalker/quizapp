@@ -4,6 +4,15 @@ using System.Collections.Generic;
 
 public abstract class Question {
 
+	// Komunikaty nadawane przez model tworzymy jako
+	// wewnętrzne klasy modelu. Dzięki temu wszystkie komunikaty 
+	// dotyczące modelu są dostępne w jenym miejscu
+	// 
+	// Taka klasa posiada konstruktor
+	// przez które przekazywane są wszystkie istotne informacje
+	// oraz publiczne gettery z których odbiorca może je odczytać.
+	// W tym przypadku interesuje nas tylko wynik weryfikacji
+	// pytania
 	public class Verified
 	{
 		public string Answer { get; private set; }
@@ -32,7 +41,6 @@ public abstract class Question {
 			new Verified(answerKey, m_correctKey)
 		);
 	}
-
 	
 	public virtual string GetAnswerOption(string answerKey)
 	{
