@@ -33,7 +33,6 @@ public class AnswerView : MonoBehaviour {
 	{
 		m_button.GetComponent<Collider>().enabled = false;
 		m_button.SetState(UIButtonColor.State.Disabled, true);
-
 	}
 
 	public void Unlock()

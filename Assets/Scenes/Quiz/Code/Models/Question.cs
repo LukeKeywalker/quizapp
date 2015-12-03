@@ -18,11 +18,13 @@ public abstract class Question {
 		public string Answer { get; private set; }
 		public string CorrectAnswer { get; private set; }
 		public bool Correctly { get { return CorrectAnswer == Answer; } }
+		public Question Question { get; private set; }
 
-		public Verified(string answerKey, string correctAnswer)
+		public Verified(Question question, string answerKey, string correctAnswer)
 		{
 			Answer = answerKey;
 			CorrectAnswer = correctAnswer;
+			Question = question;
 		}
 	}
 
@@ -38,7 +40,7 @@ public abstract class Question {
 	public virtual void Answer(string answerKey)
 	{
 		GameEvents.Invoke<Verified>(
-			new Verified(answerKey, m_correctKey)
+			new Verified(this, answerKey, m_correctKey)
 		);
 	}
 	

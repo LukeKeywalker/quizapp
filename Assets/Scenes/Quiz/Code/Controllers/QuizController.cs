@@ -10,12 +10,18 @@ public class QuizController : MonoBehaviour {
 	private int m_currentQuestionIndex;
 	private Dictionary<Type, Action<Question>> m_viewDispatcher;
 	private QuestionView m_currentView;
+	private SummaryView m_summaryView;
+	private QuizScore m_quizScore;
+
+	private int m_quizScoreValue = 0;
 
 	// Use this for initialization
 	void Start () {
 		CreateViewDispatcher();
 		InitializeQuestions();
 		AskNextQuestion();
+
+		m_quizScore = new QuizScore();
 	}
 
 	// Ta procedura symuluje wczytywanie pytań z zewnętrznej klasy
@@ -35,8 +41,8 @@ public class QuizController : MonoBehaviour {
 					{ "D", "180" },
 				}, 
 				"A"
-			),
-			
+			)
+			/*
 			new TextQuestion(
 				"Jak sie nazywa znak w zapisie nutowym podwyzszajacy dzwiek o pol tonu?",
 				new Dictionary<string, string>()
@@ -86,7 +92,11 @@ public class QuizController : MonoBehaviour {
 				"A",
 				"impresjonizm"
 			)
+			*/
 		};
+
+
+
 	}
 	
 	// Tworzy słownik mapujący pytanie do odpowiedniego widoku.
@@ -121,7 +131,9 @@ public class QuizController : MonoBehaviour {
 		}
 		else
 		{
-			// ShowSummary
+			m_summaryView.Score = m_quizScoreValue;
+			m_summaryView.Total = m_questions.Count;
+			m_summaryView.Show();
 		}
 	}
 
@@ -186,14 +198,30 @@ public class QuizController : MonoBehaviour {
 
 	void OnEnable()
 	{
+		m_summaryView = FindObjectOfType<SummaryView>();
+		m_summaryView.Hide();
+		m_summaryView.RetryClicked += HandleRetryClicked;;
+		m_summaryView.FadeFinished += HandleFadeFinished;
 		AssingQuestionViews();
 		BindViews();
 		GameEvents.Subscribe<Question.Verified>(HandleQuestionVerified);
+		GameEvents.Subscribe<QuizScore.QuizScoreChanged>(HandleQuizScoreChanged);
+	}
+
+	void HandleFadeFinished ()
+	{
+		Application.LoadLevel("Quiz");
+	}
+
+	void HandleRetryClicked ()
+	{
+		m_summaryView.FadeOut();
 	}
 
 	void OnDisable()
 	{
 		GameEvents.Unsubscribe<Question.Verified>(HandleQuestionVerified);
+		GameEvents.Subscribe<QuizScore.QuizScoreChanged>(HandleQuizScoreChanged);
 		UnbindViews();
 	}
 
@@ -219,16 +247,24 @@ public class QuizController : MonoBehaviour {
 		currentQuestion.Answer(answerKey);
 	}
 
+
+
 	void HandleQuestionVerified(Question.Verified verified)
 	{
 		StartCoroutine(ShowResult(verified));
+		if (verified.Correctly) m_quizScore.IncrementScore();
+	}
+
+	void HandleQuizScoreChanged(QuizScore.QuizScoreChanged changedEvent)
+	{
+		m_quizScoreValue += changedEvent.Change;
 	}
 
 	IEnumerator ShowResult(Question.Verified verified)
 	{
 		m_currentView.Highlight(verified.Answer, verified.CorrectAnswer);
 
-		yield return new WaitForSeconds(3.0f);
+		yield return new WaitForSeconds(1.0f);
 		AskNextQuestion();
 	}
 }
